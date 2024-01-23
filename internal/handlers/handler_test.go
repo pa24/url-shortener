@@ -73,10 +73,10 @@ func TestShortenURLHandler_Get(t *testing.T) {
 	w := httptest.NewRecorder()
 
 	// Создаем фейковый объект http.Request для метода GET
-	r := httptest.NewRequest(http.MethodGet, "/shortURL", nil)
+	r := httptest.NewRequest(http.MethodGet, "/{id}", nil)
 
 	// Вызываем обработчик
-	ShortenURLHandler(w, r, mockRepo)
+	RedirectHandler(w, r, mockRepo)
 
 	// Используем библиотеку testify для утверждений
 
